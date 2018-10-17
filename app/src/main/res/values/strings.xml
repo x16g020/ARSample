@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CZ1601Location</string>
+    <string name="compass_accuracy_low">Please re-calibrate compass by waving your device in a figure 8 motion.</string>
+</resources>

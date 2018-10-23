@@ -16,11 +16,11 @@ import com.wikitude.architect.StartupConfiguration.CameraPosition;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements ArchitectViewHolderInterface {
-    protected ArchitectView					 architectView;
-    protected SensorAccuracyChangeListener      sensorAccuracyListener;
-    protected Location 						 lastKnownLocaton;
+    protected ArchitectView	                    architectView;
+    protected SensorAccuracyChangeListener     sensorAccuracyListener;
+    protected Location 						    lastKnownLocaton;
     protected ArchitectViewHolderInterface.ILocationProvider locationProvider;
-    protected LocationListener 				 locationListener;
+    protected LocationListener 				    locationListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

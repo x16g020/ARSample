@@ -98,17 +98,31 @@ var World = {
 
 	// request POI data
 	requestDataFromLocal: function requestDataFromLocalFn(centerPointLatitude, centerPointLongitude) {
+
+//        var poisToCreate = 1;
+//		var poiData = []:
+//
+//        poiData.push({
+//            "id": (1),
+//            "longitude": (centerPointLongitude + (Math.random() / 5 - 0.1)),
+//            "latitude": (centerPointLatitude + (Math.random() / 5 - 0.1)),
+//            "description": ("星座名" ),
+//            "altitude": "300.0",
+//            "name": ("星の名前")
+//        });
+//        World.loadPoisFromJsonData(poiData);
+
 		var poisToCreate = 20;
-		var poiData = [];
+        var poiData = [];
 
 		for (var i = 0; i < poisToCreate; i++) {
 			poiData.push({
 				"id": (i + 1),
 				"longitude": (centerPointLongitude + (Math.random() / 5 - 0.1)),
 				"latitude": (centerPointLatitude + (Math.random() / 5 - 0.1)),
-				"description": ("This is the description of POI#" + (i + 1)),
-				"altitude": "100.0",
-				"name": ("POI#" + (i + 1))
+				"description": ("星座名"),
+				"altitude": (Math.random() / 5 - 0.1),
+				"name": ("星の名前")
 			});
 		}
 		World.loadPoisFromJsonData(poiData);

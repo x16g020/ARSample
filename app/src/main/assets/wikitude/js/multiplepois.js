@@ -121,57 +121,32 @@ var World = {
 //       var poisToCreate = 1;
 //       var poiData = [];
 //
-//       for (var i = 0; i < poisToCreate; i++) {
+//      for (var i = 0; i < poisToCreate; i++) {
 //          poiData.push({
 //             "id": (i + 1),
-//             "longitude": (35.737314),
-//             "latitude": (139.864743),
-////             "longitude": (centerPointLongitude + (Math.random() / 5 - 0.1)),
-////             "latitude": (centerPointLatitude + (Math.random() / 5 - 0.1)),
+//             "longitude": (centerPointLongitude - 0.1),     //経度
+//             "latitude": (centerPointLatitude ),       //緯度
 //             "description": ("This is the description of POI#" + (i + 1)),
 //             "altitude": "100.0",
 //             "name": ("#" + (i + 1))
 //          });
-//       }
-//       World.loadPoisFromJsonData(poiData);
+//      }
+//      World.loadPoisFromJsonData(poiData);
 
-//↓座標取得用
+       var poisToCreate = 11;
+       var poiData = [];
 
-		var poisToCreate = 20;
-        var poiData = [];
-        var longI = 0;
-        var latI = 0;
-
-		for (var i = 0; i < poisToCreate; i++) {
-
-		    longI = (Math.random() / 5 - 0.1);
-		    latI = (Math.random() / 5 - 0.1);
-
-			poiData.push({
-				"id": (i + 1),
-				"longitude": (centerPointLongitude + longI),
-				"latitude": (centerPointLatitude + latI),
-				"description": ("" + (longI)),
-				"altitude":"100.0",
-				"name": ("" + (latI))
-			});
-		}
-		World.loadPoisFromJsonData(poiData);
-
-//       var poisToCreate = 1;
-//       var poiData = [];
-//
-//       for (var i = 0; i < poisToCreate; i++) {
-//          poiData.push({
-//             "id": (i + 1),
-//             "longitude": (centerPointLongitude + (Math.random() / 5 - 0.1)),
-//             "latitude": (centerPointLatitude + (Math.random() / 5 - 0.1)),
-//             "description": ("This is the description of POI#" + (i + 1)),
-//             "altitude": "100.0",
-//             "name": ("#" + (i + 1))
-//          });
-//       }
-//       World.loadPoisFromJsonData(poiData);
+      for (var i = 0; i < poisToCreate; i++) {
+          poiData.push({
+             "id": (i + 1),
+             "longitude": (centerPointLongitude - (i * 0.1)/10),     //経度
+             "latitude": (centerPointLatitude - (1 - (i * 0.1))/10),       //緯度
+             "description": ("This is the description of POI#" + (i + 1)),
+             "altitude": (1000 * (Math.random() / 5 - 0.1)),
+             "name": ("#" + (i + 1))
+          });
+      }
+      World.loadPoisFromJsonData(poiData);
 	}
 
 };

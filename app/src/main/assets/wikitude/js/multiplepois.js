@@ -141,9 +141,9 @@ var World = {
              "id": (i + 1),
              "longitude": (centerPointLongitude - (i * 0.1)/10),     //経度
              "latitude": (centerPointLatitude - (1 - (i * 0.1))/10),       //緯度
-             "description": ("This is the description of POI#" + (i + 1)),
-             "altitude": (1000 * (Math.random() / 5 - 0.1)),
-             "name": ("#" + (i + 1))
+             "description": ("星座#" + (i + 1)),
+             "altitude": (50),
+             "name": ("星#" + (i + 1))
           });
       }
       World.loadPoisFromJsonData(poiData);

@@ -28,7 +28,8 @@ var World = {
 				"id": poiData[currentPlaceNr].id,
 				"latitude": parseFloat(poiData[currentPlaceNr].latitude),
 				"longitude": parseFloat(poiData[currentPlaceNr].longitude),
-				"altitude": parseFloat(poiData[currentPlaceNr].altitude),
+//				"altitude": parseFloat(poiData[currentPlaceNr].altitude),
+                "altitude": 50.0,
 				"title": poiData[currentPlaceNr].name,
 				"description": poiData[currentPlaceNr].description
 			};
@@ -136,13 +137,14 @@ var World = {
        var poisToCreate = 11;
        var poiData = [];
 
+
       for (var i = 0; i < poisToCreate; i++) {
           poiData.push({
              "id": (i + 1),
              "longitude": (centerPointLongitude - (i * 0.1)/10),     //経度
              "latitude": (centerPointLatitude - (1 - (i * 0.1))/10),       //緯度
              "description": ("星座#" + (i + 1)),
-             "altitude": (0),
+             "altitude": Math.random()*10000.0,
              "name": ("星#" + (i + 1))
           });
       }
@@ -151,7 +153,7 @@ var World = {
 
 };
 
-/* 
+/*
 	Set a custom function where location changes are forwarded to. There is also a possibility to set AR.context.onLocationChanged to null. In this case the function will not be called anymore and no further location updates will be received. 
 */
 AR.context.onLocationChanged = World.locationChanged;

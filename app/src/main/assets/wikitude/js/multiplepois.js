@@ -142,7 +142,7 @@ var World = {
              "longitude": (centerPointLongitude - (i * 0.1)/10),     //経度
              "latitude": (centerPointLatitude - (1 - (i * 0.1))/10),       //緯度
              "description": ("星座#" + (i + 1)),
-             "altitude": (50),
+             "altitude": (0),
              "name": ("星#" + (i + 1))
           });
       }

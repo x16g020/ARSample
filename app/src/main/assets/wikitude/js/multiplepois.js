@@ -28,14 +28,13 @@ var World = {
 				"id": poiData[currentPlaceNr].id,
 				"latitude": parseFloat(poiData[currentPlaceNr].latitude),
 				"longitude": parseFloat(poiData[currentPlaceNr].longitude),
-//				"altitude": parseFloat(poiData[currentPlaceNr].altitude),
-                "altitude": 50.0,
+				"altitude": parseFloat(poiData[currentPlaceNr].altitude),
 				"title": poiData[currentPlaceNr].name,
 				"description": poiData[currentPlaceNr].description
 			};
 
 			/*
-				To be able to deselect a marker while the user taps on the empty screen, 
+				To be able to deselect a marker while the user taps on the empty screen,
 				the World object holds an array that contains each marker.
 			*/
 			World.markerList.push(new Marker(singlePoi));
@@ -66,7 +65,7 @@ var World = {
 			The custom function World.onLocationChanged checks with the flag World.initiallyLoadedData if the function was already called. With the first call of World.onLocationChanged an object that contains geo information will be created which will be later used to create a marker using the World.loadPoisFromJsonData function.
 		*/
 		if (!World.initiallyLoadedData) {
-			/* 
+			/*
 				requestDataFromLocal with the geo information as parameters (latitude, longitude) creates different poi data to a random location in the user's vicinity.
 			*/
 			World.requestDataFromLocal(lat, lon);
@@ -144,7 +143,7 @@ var World = {
              "longitude": (centerPointLongitude - (i * 0.1)/10),     //経度
              "latitude": (centerPointLatitude - (1 - (i * 0.1))/10),       //緯度
              "description": ("星座#" + (i + 1)),
-             "altitude": Math.random()*10000.0,
+             "altitude": 30.0,
              "name": ("星#" + (i + 1))
           });
       }
@@ -154,7 +153,7 @@ var World = {
 };
 
 /*
-	Set a custom function where location changes are forwarded to. There is also a possibility to set AR.context.onLocationChanged to null. In this case the function will not be called anymore and no further location updates will be received. 
+	Set a custom function where location changes are forwarded to. There is also a possibility to set AR.context.onLocationChanged to null. In this case the function will not be called anymore and no further location updates will be received.
 */
 AR.context.onLocationChanged = World.locationChanged;
 
